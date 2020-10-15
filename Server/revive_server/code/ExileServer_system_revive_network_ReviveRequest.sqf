@@ -26,7 +26,7 @@ _target setVariable ['revive','1'];
 
 _pos = _target modelToWorld [0,0,0];
 _direction = getDir _target;
-_name = name _target
+_name = name _target;
 
 _newUnit = (createGroup independent) createUnit ['Exile_Unit_Player', [0,0,0], [], 0, 'CAN_COLLIDE'];
 removeHeadgear _newUnit;
