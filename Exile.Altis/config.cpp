@@ -4333,7 +4333,7 @@ class CfgInteractionMenus
 			{
 				title = "Revive Player";
 				condition = "player distance ExileClientInteractionObject < 3 and !(alive ExileClientInteractionObject) and (magazines player find 'Exile_Item_Defibrillator' >= 0)";
-				action = "['ReviveRequest', [netId ExileClientInteractionObject]] call ExileClient_system_network_send;";
+				action = "[] spawn{if ((primaryWeapon player) != '') then{private _muzzles = getArray(configFile >> 'cfgWeapons' >> (primaryWeapon player) >> 'muzzles');if (count _muzzles > 1) then{player selectWeapon (_muzzles select 0);}else{player selectWeapon (primaryWeapon player);};uisleep 2;['Reviving!',-1,-1,2,0,0,789] spawn BIS_fnc_dynamicText;uisleep 0.1;['switchMoveRequest', [netId player, 'AinvPknlMstpSlayWrflDnon_medic']] call ExileClient_system_network_send;uisleep 4;['switchMoveRequest', [netId player, ""]] call ExileClient_system_network_send;['ReviveRequest', [netId ExileClientInteractionObject]] call ExileClient_system_network_send;}else{['Reviving!',-1,-1,2,0,0,789] spawn BIS_fnc_dynamicText;uisleep 0.1;['switchMoveRequest', [netId player, 'AinvPknlMstpSlayWrflDnon_medic']] call ExileClient_system_network_send;uisleep 6;['switchMoveRequest', [netId player, ""]] call ExileClient_system_network_send;['ReviveRequest', [netId ExileClientInteractionObject]] call ExileClient_system_network_send;};};";
 			};
 			
 			class HideCorpse: ExileAbstractAction
