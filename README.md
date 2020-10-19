@@ -1,7 +1,7 @@
 # ExileRevive
 Updated Revive for Exile - Runs smoother with less bugs. Ran on Infinity Exile/AWG for a long time with no issues.
 
-Showcase video: 
+Showcase video: https://www.youtube.com/watch?v=Atm54IuWSsc
 
 This was developed on a test server with EXTDB2, no infistar and no battleye.
 
